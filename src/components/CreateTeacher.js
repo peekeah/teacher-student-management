@@ -1,7 +1,9 @@
 import { Button } from "@mui/material";
+import axios from "axios";
 import React, { useState } from "react";
 
 function CreateTeacher() {
+  const URL = "https://61cbf244198df60017aebdbf.mockapi.io/Teacher"
   const [formData, setFormData] = useState({
     name: "",
     age: "",
@@ -17,9 +19,22 @@ function CreateTeacher() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
       e.preventDefault();
-      console.log(formData)
+     
+      try {
+        await axios.post(URL, formData);
+        alert("Success!");
+      } catch (err) {
+        console.log(err);
+      }
+  
+      setFormData({
+        name: "",
+        age: "",
+        city: "",
+        email: ""
+      })
   }
 
   return (
@@ -77,7 +92,6 @@ function CreateTeacher() {
           </div>
         </div>
         <div className="mt-5">
-            {/* <button className="btn btn-primary" style={{width: 150}}>Submit</button> */}
             <Button type="submit" variant="contained" color="secondary" style={{width: 150}}>Submit</Button>
         </div>
       </form>

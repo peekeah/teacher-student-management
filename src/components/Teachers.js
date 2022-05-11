@@ -16,20 +16,12 @@ function Teachers() {
 
   useEffect(() => {
     axios.get(URL).then((res) => setData(res.data));
-  }, [])
-
-  // useEffect(() => {
-  //   // axios.get(URL).then((res) => setData(res.data));
-  //   console.log(data)
-  // }, [data])
-
-  
-
+  }, []);
 
   return (
     <>
       <div className="container mx-auto mt-5">
-      <TableContainer component={Paper}>
+        <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>
               <TableRow>

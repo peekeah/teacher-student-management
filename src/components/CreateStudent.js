@@ -1,7 +1,9 @@
 import { Button } from "@mui/material";
+import axios from "axios";
 import React, { useState } from "react";
 
 function CreateStudent() {
+  const URL = "https://61cbf244198df60017aebdbf.mockapi.io/students";
   const [formData, setFormData] = useState({
     name: "",
     age: "",
@@ -17,14 +19,29 @@ function CreateStudent() {
     }));
   };
 
-  const handleSubmit = (e) => {
-      e.preventDefault();
-      console.log(formData)
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post(URL, formData);
+      alert("Success!");
+    } catch (err) {
+      console.log(err);
+    }
+
+    setFormData({
+      name: "",
+      age: "",
+      city: "",
+      email: ""
+    })
+  };
 
   return (
     <>
-      <form className="container text-center mt-5 col-lg-6" onSubmit={handleSubmit}>
+      <form
+        className="container text-center mt-5 col-lg-6"
+        onSubmit={handleSubmit}
+      >
         <div className=" mb-3 row">
           <label className="col-sm-4 col-form-label">Name</label>
           <div className="col-sm-6">
@@ -77,8 +94,14 @@ function CreateStudent() {
           </div>
         </div>
         <div className="mt-5">
-            {/* <button className="btn btn-primary" style={{width: 150}}>Submit</button> */}
-            <Button type="submit" variant="contained" color="secondary" style={{width: 150}}>Submit</Button>
+          <Button
+            type="submit"
+            variant="contained"
+            color="secondary"
+            style={{ width: 150 }}
+          >
+            Submit
+          </Button>
         </div>
       </form>
     </>
