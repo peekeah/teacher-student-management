@@ -55,8 +55,9 @@ function Assign() {
   const handleSubmit = async (e, id) => {
     e.preventDefault();
     const index = data.findIndex((item) => item.id === id);
-    const selectedItem = data[index];
+    let selectedItem = data[index];
     delete selectedItem.id;
+    
     if(selectedItem.teacher) {
       try {
         await axios.put(`${URL}/students/${id}`, selectedItem);
