@@ -15,11 +15,6 @@ function Students() {
   const URL = "https://61cbf244198df60017aebdbf.mockapi.io/students";
   const [data, setData] = useState([]);
 
-  // const rows = [
-  //   { name: "Pranay", age: 20, city: "banglore" },
-  //   { name: "Aman", age: 24, city: "mumbai" },
-  // ];
-
   useEffect(() => {
     axios.get(URL).then((res) => setData(res.data));
   }, []);
