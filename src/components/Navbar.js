@@ -13,13 +13,11 @@ function Navbar() {
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static" color="secondary">
           <Toolbar>
+            <Button onClick={() => navigate("/")} color="inherit">Home</Button>
             <Button onClick={() => navigate("/students")} color="inherit">Students</Button>
             <Button onClick={() => navigate("/teachers")} color="inherit">teachers</Button>
             <Button onClick={() => navigate("/create")} color="inherit">create</Button>
             <Button onClick={() => navigate("/assign")} color="inherit">assign</Button>
-            {/* <Button color="inherit">Teachers</Button>
-            <Button onClick={() => navigate("/createstudent")} color="inherit">Create</Button>
-            <Button onClick={() => navigate("/createteacher")} color="inherit">Assign</Button> */}
           </Toolbar>
         </AppBar>
       </Box>

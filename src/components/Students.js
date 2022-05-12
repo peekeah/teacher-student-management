@@ -8,7 +8,6 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-// import DeleteIcon from '@mui/icons-material/Delete';
 import axios from "axios";
 
 function Students() {
@@ -30,7 +29,6 @@ function Students() {
                 <TableCell>Name</TableCell>
                 <TableCell>Age</TableCell>
                 <TableCell>City</TableCell>
-                {/* <TableCell>Actions</TableCell> */}
               </TableRow>
             </TableHead>
             <TableBody>
@@ -42,11 +40,9 @@ function Students() {
                   <TableCell component="th" scope="row">
                     {item.id}
                   </TableCell>
-                  {/* <TableCell align="right">{item.name}</TableCell> */}
                   <TableCell>{item.name}</TableCell>
                   <TableCell>{item.age}</TableCell>
                   <TableCell>{item.city}</TableCell>
-                  {/* <TableCell><></></TableCell> */}
                 </TableRow>
               ))}
             </TableBody>

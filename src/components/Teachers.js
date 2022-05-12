@@ -29,7 +29,6 @@ function Teachers() {
                 <TableCell>Name</TableCell>
                 <TableCell>Age</TableCell>
                 <TableCell>City</TableCell>
-                {/* <TableCell>Actions</TableCell> */}
               </TableRow>
             </TableHead>
             <TableBody>
@@ -41,11 +40,9 @@ function Teachers() {
                   <TableCell component="th" scope="row">
                     {item.id}
                   </TableCell>
-                  {/* <TableCell align="right">{item.name}</TableCell> */}
                   <TableCell>{item.name}</TableCell>
                   <TableCell>{item.age}</TableCell>
                   <TableCell>{item.city}</TableCell>
-                  {/* <TableCell><></></TableCell> */}
                 </TableRow>
               ))}
             </TableBody>
