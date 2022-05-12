@@ -24,7 +24,7 @@ function CreateTeacher() {
      
       try {
         await axios.post(URL, formData);
-        alert("Success!");
+        alert("Successfully added!");
       } catch (err) {
         console.log(err);
       }

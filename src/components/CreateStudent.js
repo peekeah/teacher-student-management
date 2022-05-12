@@ -13,9 +13,13 @@ function CreateStudent() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    let valueCopy = value;
+    if(name === 'age') {
+      valueCopy = parseInt(value)
+    }
     setFormData((prevState) => ({
       ...prevState,
-      [name]: value,
+      [name]: valueCopy,
     }));
   };
 
@@ -23,11 +27,10 @@ function CreateStudent() {
     e.preventDefault();
     try {
       await axios.post(URL, formData);
-      alert("Success!");
+      alert("Successfully added!");
     } catch (err) {
       console.log(err);
     }
-
     setFormData({
       name: "",
       age: "",
